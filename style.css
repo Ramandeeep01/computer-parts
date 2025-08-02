@@ -1,0 +1,585 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#first-body {
+    background-image: url(bac.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* head  */
+
+#main-heading {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 18px;
+    z-index: -2;
+}
+
+#the {
+    color: #45f3ff;
+}
+
+#af {
+    color: #ff2770;
+    animation: blink 0.6s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: #ff2770;
+    }
+    50% {
+        color: #ff277080;
+    }
+}
+
+/* mian content  */
+
+#parent {
+    height: 480px;
+    width: 853px;
+    background-color : #1c1c1c;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 256px;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 60deg;
+    inherits: false;
+}
+
+#parent::after,
+#parent::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: conic-gradient(from var(--angle), transparent 30%, #45f3ff);
+    padding: 4px;
+    border-radius: 20px;
+    z-index: -1;
+    animation: spin1 2s linear infinite;
+}
+
+@keyframes spin1 {
+    from {
+        --angle: 60deg;
+    }
+    to {
+        --angle: 420deg;
+    }
+}
+
+#parent::before {
+    filter: blur(20px);
+}
+
+.pc-wrapper {
+    height: 400px;
+    width: 780px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2; 
+}
+
+.pc-wrapper::before,
+.pc-wrapper::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(from var(--angle), transparent 30%, #ff2770);
+    padding: 4px;
+    border-radius: 20px;
+    z-index: -1; 
+    animation: spin2 2s linear infinite;
+}
+
+@keyframes spin2 {
+    from {
+        --angle: -60deg;
+    }
+    to {
+        --angle: -420deg;
+    }
+}
+
+.pc-wrapper::before {
+    filter: blur(20px);
+}
+                        
+.pc {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+
+#divv {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(6px);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: all;
+}
+
+#tap {
+    margin-left: 82%;
+    color: white;
+}
+
+::selection {
+    background-color: black;
+    color: red;
+}
+
+/* buttons */
+
+/* monitor */
+
+.monitor {
+    position: absolute;
+    height: 150px;
+    width: 270px;
+    margin-top: -375px;
+    margin-left: 364px;
+    z-index: 99;
+    rotate: -1deg;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.div1 {
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    margin-left: 180px;
+    margin-top: -430px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(monitor.png);
+    background-size: cover;
+}   
+
+.div11 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 780px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading1 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para1 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x1 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x1:hover {
+    background-color: red;
+}
+
+/* keyboard */
+
+.keyboard {
+    position: absolute; 
+    height: 32px;
+    width: 180px;
+    margin-top: -205px;
+    margin-left: 417px;
+    z-index: 99;
+    rotate: -5deg;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.div2 {
+    position: absolute;
+    height: 280px;
+    width: 470px;
+    margin-left: 180px;
+    margin-top: -430px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(keyboard.png);
+    background-size: 100% 100%;
+}   
+
+.div12 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 780px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading2 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para2 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x2 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x2:hover {
+    background-color: red;
+}
+
+/* mouse */
+
+.mouse {
+    position: absolute;
+    height: 33px;
+    width: 29px;
+    margin-top: -212px;
+    margin-left: 670px;
+    z-index: 99;
+    rotate: -40deg;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.div3 {
+    position: absolute;
+    height: 250px;
+    width: 420px;
+    margin-left: 180px;
+    margin-top: -430px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(mouse.png);
+    background-size: 100% 100%;
+    transform: rotate(45deg);
+}   
+
+.div13 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 780px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading3 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para3 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x3 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x3:hover {
+    background-color: red;
+}
+
+/* cpu */
+
+.cpu {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    margin-top: -405px;
+    margin-left: 733px;
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.div4 {
+    position: absolute;
+    height: 380px;
+    width: 420px;
+    margin-left: 180px;
+    margin-top: -500px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(cpu.png);
+    background-size: 100% 100%;
+    transform: rotate(45deg);
+    transform: rotate(0deg);
+}   
+
+.div14 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 700px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading4 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para4 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x4 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x4:hover {
+    background-color: red;
+}
+
+/* headphone */
+
+.headphn {
+    position: absolute;
+    height: 52px;
+    width: 120px;
+    margin-top: -193px;
+    margin-left: 267px;
+    rotate: -12deg;
+    z-index: 99;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.div5 {
+    position: absolute;
+    height: 380px;
+    width: 420px;
+    margin-left: 180px;
+    margin-top: -500px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(headphn.png);
+    background-size: 100% 100%;
+    transform: rotate(45deg);
+    transform: rotate(0deg);
+}   
+
+.div15 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 700px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading5 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para5 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x5 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x5:hover {
+    background-color: red;
+}
+
+
+/* speaker 1 */
+
+.speaker1 {
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    margin-top: -290px;
+    margin-left: 295px;
+    z-index: 99;
+    rotate: -10deg;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.div6 {
+    position: absolute;
+    height: 380px;
+    width: 420px;
+    margin-left: 180px;
+    margin-top: -500px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    background-image: url(speaker.png);
+    background-size: 100% 100%;
+    transform: rotate(45deg);
+    transform: rotate(10deg);
+}   
+
+.div16 {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    height: 400px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    margin-top: -490px;
+    margin-left: 700px;
+    z-index: 9999;
+    transition: all 2s ease;
+}
+
+#heading6 {
+    position: absolute;
+    margin-top: 10px;
+}
+
+#para6 {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+#x6 {
+    display: none;
+    z-index: 9999;
+    padding: 6px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    margin-top: -530px;
+    margin-left: 1180px;
+}
+
+#x6:hover {
+    background-color: red;
+}
+
+/* speaker 2 */
+
+.speaker2 {
+    position: absolute;
+    height: 88px;
+    width: 38px;
+    margin-top: -300px;
+    margin-left: 668px;
+    z-index: 99;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
